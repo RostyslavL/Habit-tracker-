@@ -8,12 +8,10 @@
     <title>Habit Tracker</title>
   </head>
   <body class="py-6 px-10">
-    <header class="flex items-center justify-between mb-10 mx-10">
+    <header class="header">
       <h1 class="font-bold text-4xl">Habit Tracker</h1>
       <button class="font-semibold text-5xl">+</button>
-      <div
-        class="absolute top-6 right-10 p-5 bg-white shadow-lg rounded-lg hidden"
-      >
+      <div class="form">
         <label>
           <input
             type="text"
@@ -21,40 +19,24 @@
             class="outline-none"
           />
         </label>
-        <button class="bg-black text-white cursor-pointer py-2 px-4 rounded">
-          Add
-        </button>
+        <button class="button-add">Add</button>
       </div>
     </header>
     <main>
-      <section class="bg-black rounded-xl p-5 mb-10 mx-10">
-        <div class="text-white font-semibold mb-4 text-2xl text-center">
-          You are almost there...
-        </div>
-        <div class="bg-[#262923] text-center">
-          <div
-            class="bg-[#F5F6F7] overflow-hidden rounded-lg font-semibold text-lg"
-            style="width: 40%"
-          >
-            37 %
-          </div>
+      <section class="progress-wrapper">
+        <div class="progress-header">You are almost there...</div>
+        <div class="progress-bar">
+          <div style="width: 40%">37 %</div>
         </div>
       </section>
       <section class="mx-10">
         <div class="mb-8">
-          <div class="flex items-center gap-4 mb-5">
-            <img
-              src="./assets/img/habit_1.svg"
-              alt="habit_1"
-              width="100"
-              class="rounded-3xl border-2 border-[#E2E4DD] border-solid"
-            />
+          <div class="habit-header">
+            <img src="./assets/img/habit_1.svg" alt="habit_1" width="100" />
             <span class="font-semibold text-2xl">To do 1 </span>
           </div>
-          <div class="flex items-center gap-6">
-            <button
-              class="bg-black rounded-full h-12 w-12 flex items-center justify-center"
-            >
+          <div class="habit-plan">
+            <button class="button-checked">
               <img src="./assets/img/done_icon.svg" alt="done" width="30" />
             </button>
             <!-- <button
@@ -62,11 +44,7 @@
             >
               W
             </button> -->
-            <button
-              class="border-2 border-solid opacity-30 border-black rounded-full h-12 w-12 flex items-center justify-center text-lg uppercase font-semibold"
-            >
-              W
-            </button>
+            <button>W</button>
           </div>
         </div>
       </section>
