@@ -34,6 +34,9 @@ body {
 .progress-bar > div {
   @apply bg-[#F5F6F7]  transition-all duration-500;
 }
+.habit {
+  animation: zoomIn 1.5s;
+}
 .habit-container {
   @apply mx-10;
 }
@@ -53,4 +56,19 @@ body {
 
 .habit-plan > button.button-checked {
   @apply bg-black border-none opacity-100;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  60% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
