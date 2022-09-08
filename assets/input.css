@@ -53,9 +53,18 @@ body {
 .habit-plan > button {
   @apply rounded-full border-2 border-solid  border-black h-12 w-12 flex items-center justify-center text-lg uppercase font-semibold opacity-30 transition-opacity;
 }
+.habit-plan > button > img {
+  @apply hidden;
+}
 
-.habit-plan > button.button-checked {
+.habit-plan > button.checked {
   @apply bg-black border-none opacity-100;
+}
+.habit-plan > button.checked > span {
+  @apply hidden;
+}
+.habit-plan > button.checked > img {
+  @apply inline-block;
 }
 
 @keyframes zoomIn {

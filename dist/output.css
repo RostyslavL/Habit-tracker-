@@ -587,6 +587,10 @@ video {
   width: 3rem;
 }
 
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -838,6 +842,11 @@ body {
   transition-duration: 500ms;
 }
 
+.habit {
+  -webkit-animation: zoomIn 1.5s;
+          animation: zoomIn 1.5s;
+}
+
 .habit-container {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
@@ -885,9 +894,55 @@ body {
   transition-duration: 150ms;
 }
 
-.habit-plan > button.button-checked {
+.habit-plan > button > img {
+  display: none;
+}
+
+.habit-plan > button.checked {
   border-style: none;
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
   opacity: 1;
+}
+
+.habit-plan > button.checked > span {
+  display: none;
+}
+
+.habit-plan > button.checked > img {
+  display: inline-block;
+}
+
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  60% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  60% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
