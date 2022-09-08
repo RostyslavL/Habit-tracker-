@@ -19,17 +19,7 @@ const getDayButton = ({ id }, isChecked, index, dayName) =>
 
 const toggleHabit = (habitId, index) => {
     const el = document.querySelectorAll(`[data-id = '${habitId}'] .habit-plan button`)
-    if (el[index].classList.contains('checked')) {
-        el[index].classList.remove('checked')
-    } else {
-        el[index].classList.add('checked')
-    }
-    // render(habits.map(habit => {
-    //     if (habit.name === habitName) {
-    //         habit.completed[index] = !habit.completed[index]
-    //         return habit
-    //     }
-    // }))
+    el[index].classList.contains('checked') ? el[index].classList.remove('checked') : el[index].classList.add('checked')
 }
 
 const getWeekDaysElement = (habit) => {
