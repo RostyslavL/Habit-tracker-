@@ -563,15 +563,6 @@ video {
   right: 2.5rem;
 }
 
-.mx-10 {
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
-}
-
-.mb-8 {
-  margin-bottom: 2rem;
-}
-
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -620,10 +611,6 @@ video {
   overflow: hidden;
 }
 
-.rounded-full {
-  border-radius: 9999px;
-}
-
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -640,6 +627,10 @@ video {
   border-radius: 1.5rem;
 }
 
+.rounded-full {
+  border-radius: 9999px;
+}
+
 .border-2 {
   border-width: 2px;
 }
@@ -648,22 +639,18 @@ video {
   border-style: solid;
 }
 
-.border-dashed {
-  border-style: dashed;
-}
-
 .border-none {
   border-style: none;
-}
-
-.border-black {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
 .border-\[\#E2E4DD\] {
   --tw-border-opacity: 1;
   border-color: rgb(226 228 221 / var(--tw-border-opacity));
+}
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
 .bg-white {
@@ -695,11 +682,6 @@ video {
   padding-bottom: 1.5rem;
 }
 
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -712,16 +694,6 @@ video {
 
 .text-center {
   text-align: center;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
 }
 
 .text-2xl {
@@ -772,6 +744,13 @@ video {
   transition-duration: 150ms;
 }
 
+body {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
 .header {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
@@ -779,6 +758,18 @@ video {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.header > h1 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+}
+
+.header > button {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 600;
 }
 
 .form {
@@ -847,6 +838,11 @@ video {
   transition-duration: 500ms;
 }
 
+.habit-container {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
 .habit-header {
   margin-bottom: 1.25rem;
   display: flex;
@@ -865,7 +861,7 @@ video {
 .habit-plan {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  justify-content: space-between;
 }
 
 .habit-plan > button {
