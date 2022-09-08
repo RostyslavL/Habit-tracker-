@@ -44,7 +44,7 @@ body {
   @apply rounded-3xl border-2 border-[#E2E4DD] border-solid;
 }
 .habit-plan {
-  @apply flex items-center gap-6;
+  @apply flex items-center justify-between;
 }
 
 .habit-plan > button {
