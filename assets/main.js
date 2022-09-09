@@ -7,7 +7,7 @@ const habits = [
         id: 1,
         img: "./assets/img/habit_1.svg",
         name: "Task 1",
-        completed: [true, false, true, false, false, false, false]
+        completed: [false, false, false, false, false, false, false]
     }
 ]
 
@@ -19,7 +19,24 @@ const getDayButton = ({ id }, isChecked, index, dayName) =>
 
 const toggleHabit = (habitId, index) => {
     const el = document.querySelectorAll(`[data-id = '${habitId}'] .habit-plan button`)
-    el[index].classList.contains('checked') ? el[index].classList.remove('checked') : el[index].classList.add('checked')
+    const progressBarElement = document.querySelector('.progress-bar > div')
+    const isChecked = el[index].classList.contains('checked')
+    const countDays = habits.length * 7
+    const percentOneDay = 100 / countDays
+
+
+    if (isChecked) {
+        el[index].classList.remove('checked')
+    }
+    else {
+        el[index].classList.add('checked')
+    }
+
+    const currentPercent = +progressBarElement.textContent.replace('%', '')
+    const percentProgress = isChecked ? currentPercent - percentOneDay : currentPercent + percentOneDay
+    console.log(percentProgress);
+    progressBarElement.textContent = percentProgress.toFixed(1) + "%"
+    progressBarElement.style.width = percentProgress.toFixed(1) + "%"
 }
 
 const getWeekDaysElement = (habit) => {
@@ -37,6 +54,9 @@ const getHabitElement = (habit) => `<div class="mt-4 mb-4 habit" data-id='${habi
     ${getWeekDaysElement(habit)}
   </div>
 </div>`
+
+
+
 
 const render = (habits) => {
     const habitContainer = document.querySelector(".habit-container")
