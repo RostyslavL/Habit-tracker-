@@ -33,8 +33,10 @@ const toggleHabit = (habitId, index) => {
     }
 
     const currentPercent = +progressBarElement.textContent.replace('%', '')
-    const percentProgress = isChecked ? currentPercent - percentOneDay : currentPercent + percentOneDay
-    console.log(percentProgress);
+    let percentProgress = isChecked ? currentPercent - percentOneDay : currentPercent + percentOneDay
+
+    if (percentProgress > 98) percentProgress = 100
+
     progressBarElement.textContent = percentProgress.toFixed(1) + "%"
     progressBarElement.style.width = percentProgress.toFixed(1) + "%"
 }
@@ -56,7 +58,34 @@ const getHabitElement = (habit) => `<div class="mt-4 mb-4 habit" data-id='${habi
 </div>`
 
 
+// Add new habit
 
+const openForm = () => {
+    document.querySelector('.form').classList.add('open')
+}
+
+const addNewHabit = () => {
+    const inputElement = document.querySelector('.form input')
+    const inputElementValue = inputElement.value
+    if (!inputElementValue) {
+        alert('Habit is required.Please provide habit name')
+        return
+    } else {
+
+        habits.unshift({
+
+            id: habits.length + 1,
+            img: "./assets/img/habit_1.svg",
+            name: inputElementValue,
+            completed: [false, false, false, false, false, false, false]
+        })
+        render(habits)
+    }
+    document.querySelector('.form').classList.remove('open')
+    inputElement.value = ''
+}
+
+// render habits
 
 const render = (habits) => {
     const habitContainer = document.querySelector(".habit-container")

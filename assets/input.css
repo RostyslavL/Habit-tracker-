@@ -16,7 +16,11 @@ body {
   @apply font-semibold text-5xl;
 }
 .form {
-  @apply absolute top-6 right-10 p-5 bg-white shadow-lg rounded-lg hidden;
+  @apply absolute top-6 right-10 p-5 bg-white shadow-2xl rounded-lg hidden;
+}
+.form.open {
+  @apply block;
+  animation: zoomIn 1s;
 }
 
 .button-add {
@@ -35,6 +39,7 @@ body {
   @apply bg-[#F5F6F7]  transition-all duration-500;
 }
 .habit {
+  @apply mb-10;
   animation: zoomIn 1.5s;
 }
 .habit-container {
